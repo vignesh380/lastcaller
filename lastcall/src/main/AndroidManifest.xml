@@ -4,8 +4,9 @@
     android:versionName="3.0" >
 
     <uses-sdk
-        android:minSdkVersion="17"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="25"
+        android:targetSdkVersion="25" />
+
 
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -34,13 +35,21 @@
         <activity
             android:name=".LastCallPreferences"
             android:exported="true"
-            android:label="@string/title_settings" />
+            android:label="@string/title_settings" >
+
+        </activity>
         <activity
             android:name=".LastCallDirectDialActivity"
             android:noHistory="true"
             android:excludeFromRecents="true"
             android:finishOnTaskLaunch="true"
-            android:exported="true"/>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
